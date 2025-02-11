@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
-import { FaLinkedin, FaGithub, FaInstagram, FaTwitter, FaMedium } from 'react-icons/fa'
+// import { FaLinkedin, FaGithub, FaInstagram, FaTwitter, FaMedium } from 'react-icons/fa'
 
-const Icons = { FaLinkedin, FaGithub, FaInstagram, FaTwitter, FaMedium };
+// const Icons = { FaLinkedin, FaGithub, FaInstagram, FaTwitter, FaMedium };
 
 
 const StyledItem = styled.li`
@@ -23,7 +23,7 @@ function Contact({ content }) {
             <h2>Let's have a chat!</h2>
             <p>{emailText}<a href={mailto}>{email}</a></p>
             <p>{socialText}</p>
-            <ul>
+            {/* <ul>
                 {
                     social.map((s, idx) => {
                         const Icon = Icons[s.name];
@@ -36,7 +36,7 @@ function Contact({ content }) {
                         );
                     })
                 }
-            </ul>
+            </ul> */}
         </div>
     )
 }

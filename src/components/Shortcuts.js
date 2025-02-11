@@ -9,10 +9,10 @@ const StyledShorcut = styled.div`
 	align-items: center;
 `;
 
-function Shortcuts({ openExplorer }) {
+function Shortcuts({ openExplorer, openSentimentAnalysis }) {
     return (
         <div>
-            <StyledShorcut>
+            {/* <StyledShorcut>
                 <Icon
                     className="pointer"
                     name="windows_explorer"
@@ -27,6 +27,14 @@ function Shortcuts({ openExplorer }) {
                     onClick={()=>startWebamp()}
                 />
                 <div>Media</div>
+            </StyledShorcut> */}
+            <StyledShorcut>
+                <Icon
+                    className="pointer"
+                    name="drvspace_7"
+                    onClick={openSentimentAnalysis}
+                />
+                <div>Sentiment <br /> analysis</div>
             </StyledShorcut>
         </div>
     )

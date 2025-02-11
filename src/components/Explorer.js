@@ -14,7 +14,7 @@ function Explorer({ items, closeExplorer, openNotepad, isMobile }) {
     return (
         <Modal
             icon="windows_explorer"
-            title="Explorer - Insaf Khamzin"
+            title="Explorer - Solana Hype Tools"
             closeModal={closeExplorer}
             style={{
                 left: isMobile ? '5%' : '15%',

@@ -9,19 +9,19 @@ const Link = styled.a`
 `
 
 
-function Taskbar() {
+function Taskbar({closeSentimentAnalysis, openSentimentAnalysis}) {
     const { projectRepo, react95Repo } = useContext(DataContext).getProjectInfo();
     console.log(projectRepo, react95Repo)
     return (
         <TaskBar
             list={
                 <List>
-                    <List.Item className="pointer" icon="brush">
-                        <Link href={react95Repo} target="_blank">Built with React95</Link>
+                    <List.Item className="pointer" icon="drvspace_7">
+                        <Link onClick={openSentimentAnalysis} target="_blank">Telegram TrendSense</Link>
                     </List.Item>
                     <List.Divider />
                     <List.Item className="pointer" icon="folder_file">
-                        <Link href={projectRepo} target="_blank">Repo</Link>
+                        <Link href={projectRepo} target="_blank">Contact</Link>
                     </List.Item>
                 </List>
             }
