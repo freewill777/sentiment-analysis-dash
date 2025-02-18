@@ -6,6 +6,8 @@ import Shortcuts from './Shortcuts';
 import Player from './Player';
 import SentimentAnalysis from './SentimentAnalysis';
 import Taskbar from './Taskbar';
+import SniperWindow from './SniperWindow';
+
 function Desktop() {
 
     const isMobile = window.innerWidth < 850;
@@ -15,6 +17,7 @@ function Desktop() {
     const [selectedItem, setSelectedItem] = useState(null);
     const [notepadOpened, toggleNotepad] = useState(false);
     const [sentimentAnalysisOpened, toggleSentimentAnalysis] = useState(false);
+    const [sniperOpened, toggleSniper] = useState(false);
 
     const [items, setItems] = useState([]);
 
@@ -22,7 +25,6 @@ function Desktop() {
         () => {
             const files = data.getItems();
             setItems(files);
-            toggleSentimentAnalysis(true);
             setSelectedItem(files[0]);
         }, [data, isMobile]);
 
@@ -45,11 +47,21 @@ function Desktop() {
     };
 
     const openSentimentAnalysis = () => {
+        closeSniper();
         toggleSentimentAnalysis(true);
     }
 
     const closeSentimentAnalysis = () => {
         toggleSentimentAnalysis(false);
+    }
+
+    const openSniper = () => {
+        closeSentimentAnalysis();
+        toggleSniper(true);
+    }
+
+    const closeSniper = () => {
+        toggleSniper(false);
     }
 
     return (
@@ -70,8 +82,13 @@ function Desktop() {
                     <SentimentAnalysis closeSentimentAnalysis={closeSentimentAnalysis} isMobile={isMobile} />
                 )
             }
+            {
+                sniperOpened && (
+                    <SniperWindow closeSentimentAnalysis={closeSentimentAnalysis} isMobile={isMobile} />
+                )
+            }
             <Player />
-            <Taskbar openSentimentAnalysis={openSentimentAnalysis} closeSentimentAnalysis={closeSentimentAnalysis} />
+            <Taskbar openSentimentAnalysis={openSentimentAnalysis} closeSentimentAnalysis={closeSentimentAnalysis} openSniper={openSniper} closeSniper={closeSniper} />
         </React.Fragment>
     )
 }

@@ -28,14 +28,14 @@ function Shortcuts({ openExplorer, openSentimentAnalysis }) {
                 />
                 <div>Media</div>
             </StyledShorcut> */}
-            <StyledShorcut>
+            {/* <StyledShorcut>
                 <Icon
                     className="pointer"
                     name="drvspace_7"
                     onClick={openSentimentAnalysis}
                 />
                 <div>Sentiment <br /> analysis</div>
-            </StyledShorcut>
+            </StyledShorcut> */}
         </div>
     )
 }

@@ -269,4 +269,8 @@ export default class DataService {
       react95Repo: this._data.react95Repo,
     };
   }
+
+  sloboz(){
+    return 'sloboz';
+  }
 }
